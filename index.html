@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amazon (simulação)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ 
+  <section id="view-login" class="view">
+    <div class="login-logo">amazon<span>.com.br</span></div>
+    <div class="login-box">
+      <h1>Fazer login</h1>
+      <label for="email">E-mail</label>
+      <input id="email" type="email" autocomplete="email">
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" autocomplete="current-password">
+      <p id="login-erro" class="erro" role="alert"></p>
+      <button id="btn-login" class="btn btn-amarelo">Continuar</button>
+      <p class="dica">Simulação: use qualquer e-mail válido e senha com 6+ caracteres.</p>
+    </div>
+  </section>
+
+  <!-- APP (header + conteúdo) -->
+  <div id="app" hidden>
+    <header class="topo">
+      <a href="#home" class="logo">amazon<span>.com.br</span></a>
+      <form id="busca" class="busca">
+        <input id="busca-input" type="search" placeholder="Pesquisar na Amazon" aria-label="Pesquisar">
+        <button type="submit" aria-label="Buscar">🔍</button>
+      </form>
+      <button id="btn-sair" class="link-topo">Olá, <span id="nome-usuario"></span><br><b>Sair</b></button>
+      <a href="#home" class="link-topo carrinho">🛒 <b id="carrinho-qtd">0</b></a>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section id="view-home" class="view">
+        <div class="banner">
+          <h2>Ofertas da semana</h2>
+          <p>Frete grátis em milhares de produtos</p>
+        </div>
+        <div id="lista" class="grade"></div>
+      </section>
+
+      <!-- PRODUTO -->
+      <section id="view-produto" class="view">
+        <a href="#home" class="voltar">‹ Voltar aos resultados</a>
+        <div class="produto">
+          <div id="p-img" class="p-img"></div>
+          <div class="p-info">
+            <h1 id="p-titulo"></h1>
+            <div id="p-nota" class="nota"></div>
+            <hr>
+            <div id="p-preco" class="preco"></div>
+            <p id="p-desc"></p>
+          </div>
+          <aside class="p-compra">
+            <div id="p-preco2" class="preco"></div>
+            <p class="verde">Frete GRÁTIS</p>
+            <p class="verde grande">Em estoque</p>
+            <label for="p-qtd">Quantidade:</label>
+            <select id="p-qtd">
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            </select>
+            <button id="btn-add" class="btn btn-amarelo">Adicionar ao carrinho</button>
+            <button id="btn-comprar" class="btn btn-laranja">Comprar agora</button>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
